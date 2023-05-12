@@ -1,0 +1,39 @@
+#header {
+  padding: 20px;
+  background-color: #06063b;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header-nav {
+      color: white;
+
+      .active {
+        color: #8bece7;
+      }
+
+      &__button {
+        background: white;
+        border: none;
+        outline: none;
+        padding: 3px 10px;
+        border-radius: 5px;
+        font-size: 18px;
+        margin-left: 6px;
+
+        &:hover {
+          background: #188094;
+          color: white;
+        }
+      }
+    }
+    .dark-mode {
+      padding: 2px 20px;
+      color: black;
+      border-radius: 16px;
+      cursor: pointer;
+    }
+  }
+}

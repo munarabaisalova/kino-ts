@@ -1,0 +1,26 @@
+#detail {
+  position: relative;
+  min-height: 170vh;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(35, 30, 30, 0.66);
+    z-index: 0;
+  }
+  .detail{
+    display: flex;
+    align-items: start;
+    position: relative;
+    z-index: 3;
+    &--img {
+      width: 70%;
+      -webkit-box-shadow: 0 0 8px 6px rgba(255, 255, 255, 0.2);
+      -moz-box-shadow: 0 0 8px 6px rgba(223, 229, 234, 0.2);
+      box-shadow: 0 0 8px 6px rgba(223, 229, 234, 0.2);
+    }
+  }
+}

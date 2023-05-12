@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import Header from "./components/Header";
+import {Routes, Route} from "react-router-dom";
+import Home from "./components/Home";
+import Popular from "./components/Popular";
+import TopRated from "./components/TopRated";
+import DetailPage from "./components/page/DetailPage/detailPage";
+import {useAppSelector} from "./components/Hooks/useAppSelector";
+import {useAppDispatch} from "./components/Hooks/useAppDispatch";
+import ActorPeople from "./components/Actors/ActorPeople";
+import SearchResult from "./components/SearcgResult";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const dispatch = useAppDispatch()
+    const {dark} = useAppSelector(s => s.DetailSlice)
+
+    return (
+        <div className="App" style={{
+            background: dark ? "black" : "",
+            color: dark ? "white": ""
+        }}>
+            <Header/>
+            <Routes>
+                <Route path={'/'} element={<Home/>}/>
+                <Route path={'/popular'} element={<Popular/>}/>
+                <Route path={'/top-rated'} element={<TopRated/>}/>
+                <Route path={'/detailPage/:detailId'} element={<DetailPage/>}/>
+                <Route path={'/movies/result/:moveName'} element={<SearchResult/>}/>
+                <Route path={'/movies/details/actors/:peopleID'} element={<ActorPeople/>}/>
+
+            </Routes>
+
+        </div>
+    );
 }
 
 export default App;
