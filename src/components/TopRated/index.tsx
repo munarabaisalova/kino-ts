@@ -20,7 +20,9 @@ const TopRated = () => {
                 <div className='topRated basis-1/2'>
                     {
                         users.map((el) => (
-                            <PopularDetail el={el} key={el.id}/>
+                            <PopularDetail el={el} key={el.id}  />
+
+
                         ))
                     }
                 </div>

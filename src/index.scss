@@ -15,4 +15,21 @@
 a {
   text-decoration: none;
 }
+.films {
+  margin: 0 80px 80px;
+  width: 1300px;
+  height: 500px;
+  background: #000;
+}
+.films-title {
+  padding-left: 20px;
+  color: white;
+  font-size: 70px;
+  &--text {
+    padding-left: 20px;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+}
 
